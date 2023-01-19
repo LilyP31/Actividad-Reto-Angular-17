@@ -1,0 +1,24 @@
+<section class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo Electronico</th>
+            <th>Telefono</th>
+            <th>Pais</th>
+            <th>Sujeto</th>
+            <th>Mensaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of nuevoFiltrado">
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.telephone}}</td>
+            <td>{{item.paises}}</td>
+            <td>{{item.sujeto}}</td>
+            <td>{{item.message}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>

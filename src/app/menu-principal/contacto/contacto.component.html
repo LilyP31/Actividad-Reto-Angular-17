@@ -1,0 +1,87 @@
+<section class="container p-4">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="row align-items-center">
+        <!--NOMBRE -->
+        <section class="col-5">
+          <input type="text" formControlName="name" class="form-control" required placeholder="Nombre">
+          <div *ngIf="name?.invalid && name?.touched" class="alert alert-danger error">
+            El nombre es requerido
+          </div>
+        </section>
+        <p></p>
+        <!-- CORREO ELECTRONICO-->
+          <section class="col-5">
+          <input type="email" formControlName="email" class="form-control" required placeholder="Correo Electronico">
+          <div *ngIf="email?.invalid && email?.touched" class="alert alert-danger error">
+            El correo electrónico no es valido
+          </div>
+        </section>
+        <p></p>
+
+    
+      <!-- TELEFONO-->
+        <p></p>
+        <section class="col-5">
+          <input type="text" maxlength="8" class="form-control" formControlName="telephone" required placeholder="Telefono">
+          <div *ngIf="telephone?.invalid && telephone?.touched" class="alert alert-danger error">
+            El teléfono es requerido
+          </div>
+        </section>
+      <p></p>
+      <!-- SELECCION DE PAISES -->
+        <section class="col-5">
+            <select value="selected" class="form-control" name="paises" id="paises" formControlName="paises" required>
+                <option value="" selected>Seleccionar Pais</option>
+                <option value="peru">Peru</option>
+                <option value="mexico">Mexico</option>
+                <option value="paraguay">Paraguay</option>
+                <option value="brasil">Brasil</option>
+            </select>
+        </section>
+
+        <p></p>
+        <!-- SUJETO -->
+        <section class="col-5">
+            <input type="text" formControlName="sujeto" class="form-control" required placeholder="Sujeto">
+            <div *ngIf="sujeto?.invalid && sujeto?.touched" class="alert alert-danger error">
+              El sujeto es requerido
+            </div>
+        </section>
+          <p></p>
+        <!-- MENSAJE-->
+       <section class="col-5">
+          <textarea rows="5" cols="30" formControlName="message" required class="form-control" placeholder="Mensaje"></textarea>
+          <div *ngIf="message?.invalid && message?.touched" class="alert alert-danger error">
+            El mensaje es requerido
+          </div>
+        </section>
+        <p></p>
+        <!-- BUTTON -->
+        <section class="col-auto botones">
+          <section class="col-auto ">
+              <button type="submit" class="btn btn-primary">Registrar</button>
+          </section>  
+            <section class="col-auto m-3">
+              <input type="button" value="Enviar" class="btn btn-primary" (click)="EnviarDatos()">
+            </section>    
+        </section>
+        <p></p>
+    </form>
+
+      <!-- FILTRADO POR PAIS -->
+      <section class="col-5 rounded mx-auto d-block">
+        <select class="form-control" [(ngModel)]="filtradoporPais" >
+            <option value="">Filtrado por Pais</option>
+            <option value="peru">Peru</option>
+            <option value="mexico">Mexico</option>
+            <option value="paraguay">Paraguay</option>
+            <option value="brasil">Brasil</option>
+        </select>
+        <section class="col-auto p-2 botones">
+          <input type="button" value="Filtrar" class="btn btn-primary" (click)="Filtrado()">
+      </section>  
+    </section>
+</section>
+
+<!--<a routerLink="/contacto/{{ dato }}/mensaje"> <a routerLink="/vistafull/{{ dato }}/vistafiltro">Enviar datos a vistafiltro</a>-->
+<!--Enviar datos a vistafiltro-->
+<!--</a> --> 

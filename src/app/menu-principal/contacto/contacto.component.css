@@ -1,0 +1,14 @@
+.error{
+    color: red;
+}
+*{
+    align-items: center;
+    justify-content: center;
+    
+}
+.botones{
+    display: flex;
+}
+.botones button:last-child {
+    margin-left: 1rem;
+}
